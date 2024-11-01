@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>江流端口</title>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono|Montserrat:700");
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    color: inherit;
+}
+
+body {
+    background-image: linear-gradient(120deg, #87CEFA 0%, #000000 100%);
+    height: 100vh;
+}
+
+h1 {
+    font-size: 20vw;
+    text-align: center;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+    color: #ffffff28;
+    text-shadow: 0 0 50px rgba(0, 0, 0, 0.07);
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    font-family: "Montserrat", monospace;
+}
+
+div {
+    background: rgba(0, 0, 0, 0);
+    width: 70vw;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    margin: 0 auto;
+    padding: 30px 30px 10px;
+    box-shadow: 0 0 150px -20px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+P {
+    font-family: "Share Tech Mono", monospace;
+    color: #f5f5f5;
+    margin: 0 0 20px;
+    font-size: 17px;
+    line-height: 1.2;
+}
+
+span {
+    color: #f0c674;
+}
+
+i {
+    color: #8abeb7;
+}
+
+div a {
+    text-decoration: none;
+}
+
+b {
+    color: #81a2be;
+}
+
+a.avatar {
+    position: fixed;
+    bottom: 15px;
+    right: -100px;
+    -webkit-animation: slide 0.5s 4.5s forwards;
+            animation: slide 0.5s 4.5s forwards;
+    display: block;
+    z-index: 4
+}
+
+a.avatar img {
+    border-radius: 100%;
+    width: 44px;
+    border: 2px solid white;
+}
+
+@-webkit-keyframes slide {
+    from {
+        right: -100px;
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+        opacity: 0;
+    }
+    to {
+        right: 15px;
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slide {
+    from {
+        right: -100px;
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+        opacity: 0;
+    }
+    to {
+        right: 15px;
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+</style>
+</head>
+<body>
+<h1>端口</h1>
+<div><p>> <span>状态</span>: <i>正常</i></p>
+<p>> <span>作者</span>: <i>江流</i></p>
+<p>> <span>公告</span>: <i>演戏=战神| 乱杀=封号</i></p>
+<p>> <span>注意事项</span>: <b>高段位请人头控制15以内</b></p>
+<p>> <span>祝</span>:<i>大家百榜上见</i></p>
+<p>> <span>时间</span>:<i style="text-align:center;color:#87CEFA;font-family:'Microsoft YaHei'" id="time"></i></p>
+</div>
+
+<script type="text/javascript">
+function time(){
+var date = new Date()<!--获得日期数据-->
+var y = date.getFullYear();<!--年-->
+var m = date.getMonth()+1;<!--月，这里的月份必须要+1才是当前月份-->
+var d = date.getDate(); <!--日，getDay是获得当前星期几（0-6），getDate是获得当前日期-->
+var x = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六"); <!--规范星期输出格式 -->
+var h = date.getHours(); <!-- 获取当前时间的时 -->
+var min = date.getMinutes(); <!-- 获取当前时间的分 -->
+var s = date.getSeconds(); <!-- 获取当前时间的秒 -->
+document.getElementById("time").innerHTML = y+"年"+m+"月"+d+"日"+" "+x[date.getDay()]+" "+((h>12)?"下午":"早上")+h+ ((min<10)?":0":":")+min+((s<10)?":0":":")+s;;
+}
+setInterval("time()",1000);
+</script>
+
+<script>
+var str = document.getElementsByTagName('div')[0].innerHTML.toString();
+var i = 0;
+document.getElementsByTagName('div')[0].innerHTML = "";
+
+setTimeout(function() {
+    var se = setInterval(function() {
+        i++;
+        document.getElementsByTagName('div')[0].innerHTML = str.slice(0, i) + "|";
+        if (i == str.length) {
+            clearInterval(se);
+            document.getElementsByTagName('div')[0].innerHTML = str;
+        }
+    }, 10);
+},0);
+</script>
+
+</body>
+<embed  height="0" width="0" src="https://api.uomg.com/api/rand.music?mid=5135090539&format=mp3"></embed>
+</html>
